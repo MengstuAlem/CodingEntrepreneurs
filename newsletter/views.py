@@ -28,6 +28,7 @@ def contact(request):
     }
     return render(request, 'forms.html', context)
 
+
 def home(request):
     title = 'Welcome'
 
@@ -52,7 +53,7 @@ def home(request):
             'title': 'Thank you!',
         }
 
-    return render(request, 'home.html', context)
+    return render(request, 'base.html', context)
 
 
 def home__(request):
