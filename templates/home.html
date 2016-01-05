@@ -3,21 +3,56 @@
 
 {% block head_title %}Welcome! {% endblock %}
 
-{% block jambotron %}
-    Hi
-    {{ block.super }}
+<style>
+{% block style %}
+    .lead{
+        text-align: center;
+    }
+{% endblock %}
+</style>
+
+{% block jumbotron_content %}
+    <div class="row">
+
+        <div class="col-sm-8">
+            <h1>Try Django 1.8</h1>
+            <p>The MVP langing projext is designed to get your project started. The goal is to help you launch
+                as suun as possible with the least amount of investment using time or money. Join Us today.</p>
+            <p><a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join Us &raquo;</a></p>
+        </div>
+
+        <div class="col-sm-4" style="background-color: black;min-height: 300px;">
+
+        </div>
+
+    </div>
+
 {% endblock %}
 
 {% block content %}
 
     <div class="row">
-        <div class="col-md-4 col-sm-6">
+
+        <div class="col-sm-3 pull-right">
             <form method="POST" action="">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <input class="btn btn-primary" type="submit" value="Sign Up">
             </form>
         </div>
+
+        <div class="col-sm-3">
+            Django bootstrap
+        </div>
+
+        <div class="col-sm-3">
+            Starters
+        </div>
+
+        <div class="col-sm-3">
+            <p class="lead">Open Source</p>
+        </div>
+
     </div>
 
 {% endblock %}
