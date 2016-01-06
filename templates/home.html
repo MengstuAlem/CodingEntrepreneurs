@@ -41,6 +41,16 @@
 
 {% block content %}
 
+    {% if request.user.is_authenticated %}
+
+        <h1>You are logged in!</h1>
+        <table class="table">
+        {% for obj in queryset %}
+            <tr><td>{{ forloop.counter }}</td><td>{{ obj }}</td><td>{{ obj.full_name }}</td><td>{{ obj.timestamp|timesince }}</td></tr>
+        {% endfor %}
+        </table>
+
+    {% else %}
     <div class="row">
 
         <div class="col-sm-3 pull-right">
@@ -69,5 +79,6 @@
         </div>
 
     </div>
+    {% endif %}
 
 {% endblock %}
