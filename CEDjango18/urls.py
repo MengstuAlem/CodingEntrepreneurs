@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^contact/$', 'newsletter.views.contact', name='contact'),
     url(r'^about/$', 'CEDjango18.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls'), name='accounts'),
 ]
 
 if settings.DEBUG:
